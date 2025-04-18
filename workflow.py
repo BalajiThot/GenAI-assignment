@@ -16,7 +16,7 @@ from langgraph.checkpoint.memory import MemorySaver
 load_dotenv()
 
 # Configure language models
-openai_model = ChatOpenAI(model="gpt-4", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
+openai_model = ChatGroq(model="gpt-4", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
 llama_model = ChatGroq(model="llama3-70b-8192", temperature=0.1, api_key=os.getenv("GROQ_API_KEY"))
 
 # Define the state schema
