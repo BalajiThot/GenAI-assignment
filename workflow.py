@@ -1,7 +1,6 @@
 import os
 from typing import Dict, TypedDict, List, Any, Annotated
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.output_parsers import PydanticOutputParser
@@ -16,7 +15,7 @@ from langgraph.checkpoint.memory import MemorySaver
 load_dotenv()
 
 # Configure language models
-openai_model = ChatGroq(model="gpt-4", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
+openai_model = ChatGroq(model="mistral-saba-24b", temperature=0, api_key=os.getenv("GROQ_API_KEY"))
 llama_model = ChatGroq(model="llama3-70b-8192", temperature=0.1, api_key=os.getenv("GROQ_API_KEY"))
 
 # Define the state schema
